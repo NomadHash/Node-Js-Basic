@@ -1,0 +1,14 @@
+{
+  "name": "express-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon  -e js,html main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nunjucks": "^3.2.2"
+  }
+}

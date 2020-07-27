@@ -1,0 +1,16 @@
+{
+  "name": "express-online",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon - e js, html main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "morgan": "^1.9.1",
+    "nunjucks": "^3.2.0"
+  }
+}

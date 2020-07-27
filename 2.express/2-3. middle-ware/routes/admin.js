@@ -1,17 +1,6 @@
 const express = require('express');
 const router = express.Router();// 라우터 분리 시 express의 router메서드 사용.
 
-function firstMiddleWare(req,res,next){
-    console.log("첫번째 미들웨어");
-    next();
-};
-
-function secondMiddleWare(req,res,next){
-    console.log("두번째 미들웨어");
-    next();
-};
-
-
 //ex)1
 /*
 function loginRequired(req,res,next){
@@ -26,10 +15,18 @@ router.get("/", loginRequired, (req, res) => {//'/admin이동후 loginRequired�
 });
 */
 
+function firstMiddleWare(req,res,next){
+    console.log("First");
+    next();
+};
+
+function secondMiddleWare(req,res,next){
+    console.log("Second");
+    next();
+};
 
 
-
-router.get("/", firstMiddleWare,secondMiddleWare, (req, res) => {//'/admin이동후 firstMiddleWare실행 후 secondMiddleWare 거친 후 send해주기.
+router.get("/", firstMiddleWare,secondMiddleWare, (req, res) => {//'해당 url 요청시 firstMiddleWare, secondMiddleWare 함수를 거친 후 "admin page 응답.
   res.send("admin page");
 });
 
@@ -40,9 +37,11 @@ router.get('/products', (req, res) => {
     });
 });
 
-router.get('/profile', (req, res) => {
-    res.send("admin profile");
+router.get('/products/write',(req,res)=>{
+    res.render('admin/write.html')
 });
 
-
+router.post("/products/write", (req, res) => {//write 페이지 에서 port 요청이 발생한다면.
+  res.send(req.body.name);
+});
 module.exports = router;

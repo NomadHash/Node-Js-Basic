@@ -14,3 +14,5 @@ morgan 설치
 
 GET /admin/products 304 0.427 ms -  (Get방식으로  /admin/products로 요청함)
 
+"nodemon  -e js,html main.js"
+

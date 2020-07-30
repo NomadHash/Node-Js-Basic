@@ -18,7 +18,7 @@ const sequelize = new Sequelize(process.env.DATABASE,
         }
     });
 
-let db = [];
+let db = {};
 
 fs.readdirSync(__dirname)
     .filter(file => {
